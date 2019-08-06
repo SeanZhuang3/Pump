@@ -1,0 +1,48 @@
+#include "usart.h"   
+#include "stm8s_uart1.h"
+#include "confer.h"
+
+u8 Rec_Data[60];//串行接收数据缓冲区
+u8 Rec_Num=0;  	//数组缓存个数
+u8 Tx_Data[5]={0xbb,0x11,0,0,0xee};//串行发送数据缓冲区
+
+
+//A3 TX   F4 RX
+void UART_Init(void)//串口通讯配置
+{
+    GPIO_DeInit(GPIOA);
+    GPIO_DeInit(GPIOF);
+    GPIO_Init(GPIOA,GPIO_PIN_3,GPIO_MODE_OUT_PP_HIGH_FAST);
+    GPIO_Init(GPIOF,GPIO_PIN_4,GPIO_MODE_IN_FL_NO_IT);
+    
+    UART1_DeInit();
+    UART1_Init(9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO,UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
+    UART1_ITConfig(UART1_IT_RXNE, ENABLE);
+    UART1_Cmd(ENABLE);	
+}
+
+void UART_send(void)
+{
+    u8 i;
+    u16 j;
+    for(i=0;i<5;i++)
+    {
+        UART1_SendData8(Tx_Data[i]); 
+        while(UART1_GetFlagStatus(UART1_FLAG_TC)==RESET);
+        UART1_ClearFlag(UART1_FLAG_TC);	
+        j=50;
+        while(j--);		//等待数据稳定
+    }
+}
+
+
+
+           
+void UART1_RX_Service(void)
+{
+  if(Rec_Num<50)
+	  Rec_Data[Rec_Num]=UART1_ReceiveData8();			
+  Rec_Num++;
+  
+  UART1->SR = (u8)~(UART1_SR_RXNE);
+}

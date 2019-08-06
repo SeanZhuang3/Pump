@@ -1,0 +1,191 @@
+#include "control.h"   
+#include "confer.h"
+
+
+extern MotorParam_TypeDef Motor;
+extern PID_TypeDef PID;
+u16 Target = 1000;              //目标转速
+u16 Real = 0;                   //真实转速        
+
+
+u16 CurrentInit ;
+u16 RealCurrent;
+
+extern u8 HighPeriod ;      //高电平时长
+extern u8 CapCount;             //捕获信号次数
+
+/*硬件初始化*/
+void BSP_Init(void)
+{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    Clock_Init();       //时钟配置
+    Led_Int();          
+    
+    Motor_Init();
+    UART_Init();
+    Bemf_Init();
+
+    Capture_Init();
+    Current_Init();
+    CurrentInit = Current_Offset();
+
+    enableInterrupts();//中断使能
+} 
+
+
+WORK_STATE Work_State = STOP;
+  
+void Run(void)
+{
+
+
+  while (1)
+  {
+      switch(Work_State)
+      {
+          case (START):         //开环启动
+                 if(Motor.StartFlag == 0)         //未启动
+                {
+                    Motor.StartFlag = 1;
+                    Tim6_Init();
+                    PID_Init();
+                    
+                    if(Sensorless_START() != 0)//正常启动
+                    {
+
+                      Work_State = CLOSE_LOOP;
+                    }
+                    else                      //无法启动
+                    {
+                      
+                      Motor.ErrorFlag = 1;
+                      Work_State = STOP;
+                    }
+                
+                }           
+                 
+                          break;	
+                          
+          case (CLOSE_LOOP):	//闭环转
+                if(Motor.ErrorFlag == 0 && Motor.StartFlag == 1)
+                {
+
+                  Motor.PwmValue = PID_Compute(Target , Real ,&PID);
+                  Work_State = COMMUNICATION;
+                }
+                else                      //无法启动
+                {
+                  
+                  Motor.ErrorFlag = 2;
+                  Work_State = STOP;
+                }                
+   
+                          break;
+                
+          case (STOP):          //停止
+                if(Motor.ErrorFlag != 0)//有故障
+                {
+                  Motor.StartFlag = 0;
+                  Motor.ErrorFlag = 0;          //清故障
+                  
+                  Motor_Stop();
+
+                  
+                  Tim6_ReInit();
+                  PID_DeInit();
+                  Nwp_Signal_H();  //NWP 置高
+                  
+                }
+                else
+                {
+
+                  Work_State = COMMUNICATION;
+                }
+                
+                          
+                          break;
+          case (COMMUNICATION):	//通信
+
+                 Motor.ErrorFlag = Detect_Current(CurrentInit,&RealCurrent);
+                  Work_State = START;
+                  if( Cal_Speed(HighPeriod ,&Target) == 1)//转
+                  {
+                    if(Motor.StartFlag == 0)    //未启动
+                    {
+                      Work_State = START;
+                    }
+                    else                        //变速
+                    {
+                        //会跳转50ms任务
+                    }
+                  }
+                  else                          //停止
+                  {
+                    Motor.ErrorFlag = 3;
+                    Work_State = STOP;
+                  }
+
+                       
+                          break;                          
+          default:break;
+      }
+  }
+} 
+ 
+u8  Count6ms=0,Count50ms=0;  //软计时变量定义
+
+void Time_1ms(void)//1ms定时器 
+{   
+    Count6ms++;
+
+    Count50ms++;
+    
+    Task();
+
+    Task_50ms();  
+    
+    TIM6_ClearITPendingBit(TIM6_IT_UPDATE);//清除更新标志位
+   
+}
+
+
+/*定时任务*/
+void Task()
+{
+  if((Count6ms % 6 )== 0) //6ms任务
+  {
+    Nwp_Signal();
+  }
+  else if(Count6ms  >= 240)  //240ms
+  {
+    Uart_Send(RealCurrent);  //发送电流数据
+
+    Count6ms = 0;
+  }
+}
+
+
+
+/*50ms任务*/   
+void Task_50ms()
+{
+  if(Count50ms >= 50)
+  {
+    Det_Signal_Period_Reset(&HighPeriod ,CapCount);  //复位信号
+    
+    Count50ms = 0;
+  //RealS=NumCoun*20*60/6/MoPair;	//NumCoun  换相次数          MoPair  极数    
+    Real= Motor.StartSwitchStepCount * 200/Motor.NumPair;//StartSwitchStepCount  换相次数  MoPair  极数
+    
+    Motor.StartSwitchStepCount=0;
+  
+    if(Motor.StartFlag==1)                      //运行状态
+    Motor.PwmValue = PID_Compute(Target , Real ,&PID);
+  }
+}
+
+
+
+
+
+
+

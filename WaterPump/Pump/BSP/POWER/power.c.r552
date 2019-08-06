@@ -1,0 +1,53 @@
+#include "power.h"   
+#include "confer.h"
+
+void Vol_Init(void)//母线电压配置
+{
+    GPIO_Init(GPIOB,GPIO_PIN_2,GPIO_MODE_IN_FL_NO_IT); //speed_set,AIN2
+    ADC1_DeInit();
+    ADC1_ConversionConfig(ADC1_CONVERSIONMODE_SINGLE, ADC1_CHANNEL_2, ADC1_ALIGN_RIGHT);
+    ADC1_SchmittTriggerConfig(ADC1_SCHMITTTRIG_CHANNEL2, DISABLE);
+    ADC1_ITConfig(ADC1_IT_EOCIE, DISABLE);
+    ADC1_Cmd(ENABLE);
+}
+
+
+void Current_Init(void)//电流
+{
+    GPIO_Init(GPIOB,GPIO_PIN_0,GPIO_MODE_IN_FL_NO_IT); //speed_set,AIN3
+    ADC1_DeInit();										//关AD
+    ADC1_ConversionConfig(ADC1_CONVERSIONMODE_SINGLE, ADC1_CHANNEL_1, ADC1_ALIGN_RIGHT);
+    ADC1_SchmittTriggerConfig(ADC1_SCHMITTTRIG_CHANNEL1, DISABLE);
+    ADC1_ITConfig(ADC1_IT_EOCIE, DISABLE);
+    ADC1_Cmd(ENABLE);
+}
+
+
+/*ADC开始采样*/
+//void ADC_StartConversion(void)
+//{
+//  ADC1_StartConversion();
+//}
+
+/*电流偏移量*/
+u16 Current_Offset(void)
+{
+  u16 CurrentOffset = 0;
+  
+//  ADC_Init_VB();
+//  ADC1_DeInit();
+//  Current_Init();
+  ADC1_StartConversion();
+  while(ADC1_GetFlagStatus(ADC1_FLAG_EOC) != 0);//等待转换完成
+  
+  ADC1_ClearFlag(ADC1_FLAG_EOC);
+  CurrentOffset = ADC1_GetConversionValue();
+  
+  return CurrentOffset;
+  
+}
+
+
+
+
+

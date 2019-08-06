@@ -1,0 +1,589 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V1.42.1.142 for STM8                   30/Jul/2019  18:06:04 #
+# Copyright 2010-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  D:\LINK Item\oil pump\HardWare                           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Exe #
+#                    \Pump.out                                                #
+#    Map file     =  D:\LINK Item\oil pump\HardWare                           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Lis #
+#                    t\Pump.map                                               #
+#    Command line =  "D:\LINK Item\oil pump\HardWare                          #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \bemf.o" "D:\LINK Item\oil pump\HardWare                 #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \capture.o" "D:\LINK Item\oil pump\HardWare              #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \clock.o" "D:\LINK Item\oil pump\HardWare                #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \control.o" "D:\LINK Item\oil pump\HardWare              #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \main.o" "D:\LINK Item\oil pump\HardWare                 #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \motor.o" "D:\LINK Item\oil pump\HardWare                #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \pid.o" "D:\LINK Item\oil pump\HardWare                  #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \power.o" "D:\LINK Item\oil pump\HardWare                #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_adc1.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_clk.o" "D:\LINK Item\oil pump\HardWare            #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_exti.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_gpio.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_it.o" "D:\LINK Item\oil pump\HardWare             #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_itc.o" "D:\LINK Item\oil pump\HardWare            #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_iwdg.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_tim1.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_tim5.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_tim6.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_uart1.o" "D:\LINK Item\oil pump\HardWare          #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \stm8s_wwdg.o" "D:\LINK Item\oil pump\HardWare           #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \timer.o" "D:\LINK Item\oil pump\HardWare                #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj #
+#                    \usart.o" --redirect _Printf=_PrintfSmall --redirect     #
+#                    _Scanf=_ScanfSmall -o "D:\LINK Item\oil pump\HardWare    #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Exe #
+#                    \Pump.out" --map "D:\LINK Item\oil pump\HardWare         #
+#                    TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Lis #
+#                    t\Pump.map" --config "D:\Program Files (x86)\IAR         #
+#                    Systems\Embedded Workbench 6.5\stm8\config\lnkstm8s903k3 #
+#                    .icf" --config_def _CSTACK_SIZE=0x100 --config_def       #
+#                    _HEAP_SIZE=0x100 --entry __iar_program_start --debug_lib #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__SystemLibrary            = DLib
+__code_model               = small
+__core                     = stm8
+__data_model               = medium
+__dlib_file_descriptor     = 0
+__dlib_full_locale_support = 0
+__rt_version               = 4
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x000000-0x0000ff] { rw section .vregs };
+"A2":  place at end of [0x000000-0x0003ff] { block CSTACK };
+"P2":  place in [from 0x000000 to 0x0003ff] {
+          block HEAP, rw section .far.bss, rw section .far.data,
+          rw section .far.noinit, rw section .far_func.textrw,
+          rw section .huge.bss, rw section .huge.data, rw section .huge.noinit,
+          rw section .huge_func.textrw, rw section .iar.dynexit,
+          rw section .near.bss, rw section .near.data, rw section .near.noinit,
+          rw section .near_func.textrw };
+"A3":  place at start of [0x008000-0x009fff] { block INTVEC };
+"P3":  place in [from 0x008000 to 0x009fff] {
+          ro section .far.data_init, ro section .far_func.textrw_init,
+          ro section .huge.data_init, ro section .huge_func.textrw_init,
+          ro section .iar.init_table, ro section .init_array,
+          ro section .near.data_init, ro section .near.rodata,
+          ro section .near_func.text, ro section .near_func.textrw_init,
+          ro section .tiny.data_init, ro section .tiny.rodata_init };
+
+  Section            Kind      Address    Size  Object
+  -------            ----      -------    ----  ------
+"A1":                                     0x10
+  .vregs             uninit   0x000000    0x10  vregs.o [4]
+                            - 0x000010    0x10
+
+"P2", part 1 of 2:                        0x17
+  P2 s0                       0x000010    0x17  <Init block>
+    .near.data       inited   0x000010     0x8  bemf.o [1]
+    .near.data       inited   0x000018     0x6  bemf.o [1]
+    .near.data       inited   0x00001e     0x5  control.o [1]
+    .near.data       inited   0x000023     0x2  control.o [1]
+    .near.data       inited   0x000025     0x1  capture.o [1]
+    .near.data       inited   0x000026     0x1  control.o [1]
+                            - 0x000027    0x17
+
+"P2", part 2 of 2:                        0x2c
+  .near.bss          zero     0x000027    0x10  motor.o [1]
+  .near.bss          zero     0x000037     0xc  pid.o [1]
+  .near.bss          zero     0x000043     0x2  control.o [1]
+  .near.bss          zero     0x000045     0x2  control.o [1]
+  .near.bss          zero     0x000047     0x2  control.o [1]
+  .near.bss          zero     0x000049     0x2  control.o [1]
+  .near.bss          zero     0x00004b     0x2  power.o [1]
+  .near.bss          zero     0x00004d     0x1  capture.o [1]
+  .near.bss          zero     0x00004e     0x1  capture.o [1]
+  .near.bss          zero     0x00004f     0x1  capture.o [1]
+  .near.bss          zero     0x000050     0x1  control.o [1]
+  .near.bss          zero     0x000051     0x1  control.o [1]
+  .near.bss          zero     0x000052     0x1  power.o [1]
+                            - 0x000053    0x2c
+
+"A2":                                    0x100
+  CSTACK                      0x000300   0x100  <Block>
+    CSTACK           uninit   0x000300   0x100  <Block tail>
+                            - 0x000400   0x100
+
+"A3":                                     0x80
+  INTVEC                      0x008000    0x80  <Block>
+    .intvec          const    0x008000    0x80  interrupt.o [4]
+                            - 0x008080    0x80
+
+"P3":                                   0x1c64
+  .near_func.text    ro code  0x008080   0x392  float.o [4]
+  .near_func.text    ro code  0x008412   0x161  stm8s_itc.o [1]
+  .near_func.text    ro code  0x008573   0x140  long.o [4]
+  .near_func.text    ro code  0x0086b3   0x114  stm8s_gpio.o [1]
+  .near_func.text    ro code  0x0087c7   0x10e  motor.o [1]
+  .near_func.text    ro code  0x0088d5    0xfc  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x0089d1    0xd5  stm8s_uart1.o [1]
+  .near_func.text    ro code  0x008aa6    0xd2  vreg_util.o [4]
+  .near_func.text    ro code  0x008b78    0xd1  stm8s_exti.o [1]
+  .near_func.text    ro code  0x008c49    0xc8  bemf.o [1]
+  .near_func.text    ro code  0x008d11    0xbf  pid.o [1]
+  .near_func.text    ro code  0x008dd0    0xbe  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x008e8e    0xb7  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x008f45    0xb7  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x008ffc    0xb3  control.o [1]
+  .near_func.text    ro code  0x0090af    0xad  capture.o [1]
+  .near_func.text    ro code  0x00915c    0x9e  stm8s_uart1.o [1]
+  .near_func.text    ro code  0x0091fa    0x98  motor.o [1]
+  .near_func.text    ro code  0x009292    0x76  power.o [1]
+  .near_func.text    ro code  0x009308    0x65  control.o [1]
+  .near.rodata       const    0x00936d    0x5e  stm8s_uart1.o [1]
+  .near.rodata       const    0x0093cb    0x5d  stm8s_adc1.o [1]
+  .near.rodata       const    0x009428    0x5d  stm8s_exti.o [1]
+  .near.rodata       const    0x009485    0x5d  stm8s_gpio.o [1]
+  .near.rodata       const    0x0094e2    0x5d  stm8s_tim5.o [1]
+  .near.rodata       const    0x00953f    0x5d  stm8s_tim6.o [1]
+  .near.rodata       const    0x00959c    0x5c  stm8s_itc.o [1]
+  .near_func.text    ro code  0x0095f8    0x5c  motor.o [1]
+  .near_func.text    ro code  0x009654    0x5b  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x0096af    0x5b  stm8s_tim5.o [1]
+  .near_func.text    ro code  0x00970a    0x54  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x00975e    0x51  short.o [4]
+  .near_func.text    ro code  0x0097af    0x48  motor.o [1]
+  .near_func.text    ro code  0x0097f7    0x46  control.o [1]
+  .near_func.text    ro code  0x00983d    0x3b  capture.o [1]
+  .near_func.text    ro code  0x009878    0x37  stm8s_tim5.o [1]
+  .near_func.text    ro code  0x0098af    0x2f  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x0098de    0x2d  stm8s_tim6.o [1]
+  .near_func.text    ro code  0x00990b    0x2c  control.o [1]
+  .near_func.text    ro code  0x009937    0x29  motor.o [1]
+  .near_func.text    ro code  0x009960    0x29  power.o [1]
+  .near_func.text    ro code  0x009989    0x28  stm8s_tim5.o [1]
+  .near_func.text    ro code  0x0099b1    0x28  init_small.o [4]
+  .near_func.text    ro code  0x0099d9    0x26  dc_util.o [4]
+  .near_func.text    ro code  0x0099ff    0x24  bemf.o [1]
+  .near_func.text    ro code  0x009a23    0x22  control.o [1]
+  .near_func.text    ro code  0x009a45    0x22  power.o [1]
+  .near_func.text    ro code  0x009a67    0x21  pid.o [1]
+  .near_func.text    ro code  0x009a88    0x21  usart.o [1]
+  .iar.init_table    const    0x009aa9    0x12  - Linker created -
+  .near_func.text    ro code  0x009abb    0x20  control.o [1]
+  .near_func.text    ro code  0x009adb    0x1e  init_small.o [4]
+  .near_func.text    ro code  0x009af9    0x1d  clock.o [1]
+  .near_func.text    ro code  0x009b16    0x1d  pid.o [1]
+  .near_func.text    ro code  0x009b33    0x1d  timer.o [1]
+  .near_func.text    ro code  0x009b50    0x1c  timer.o [1]
+  .near_func.text    ro code  0x009b6c    0x1a  long_util.o [4]
+  .near_func.text    ro code  0x009b86    0x17  init.o [4]
+  .near_func.text    ro code  0x009b9d    0x16  stm8s_it.o [1]
+  .near_func.text    ro code  0x009bb3    0x16  stm8s_it.o [1]
+  .near_func.text    ro code  0x009bc9    0x16  stm8s_it.o [1]
+  .near_func.text    ro code  0x009bdf    0x15  clock.o [1]
+  .near_func.text    ro code  0x009bf4    0x14  bemf.o [1]
+  .near_func.text    ro code  0x009c08    0x14  timer.o [1]
+  .near_func.text    ro code  0x009c1c    0x14  __dbg_xxexit.o [3]
+  .near_func.text    ro code  0x009c30    0x13  cstartup.o [4]
+  .near_func.text    ro code  0x009c43    0x12  move.o [4]
+  .near_func.text    ro code  0x009c55    0x11  capture.o [1]
+  .near_func.text    ro code  0x009c66     0xf  motor.o [1]
+  .near_func.text    ro code  0x009c75     0x9  capture.o [1]
+  .near_func.text    ro code  0x009c7e     0x6  main.o [1]
+  .near_func.text    ro code  0x009c84     0x6  stm8s_itc.o [1]
+  .near_func.text    ro code  0x009c8a     0x6  char.o [4]
+  .near_func.text    ro code  0x009c90     0x5  clock.o [1]
+  .near_func.text    ro code  0x009c95     0x5  stm8s_adc1.o [1]
+  .near_func.text    ro code  0x009c9a     0x5  cexit.o [4]
+  .near_func.text    ro code  0x009c9f     0x4  stm8s_gpio.o [1]
+  .near_func.text    ro code  0x009ca3     0x3  stm8s_gpio.o [1]
+  .near_func.text    ro code  0x009ca6     0x3  stm8s_gpio.o [1]
+  .near_func.text    ro code  0x009ca9     0x3  stm8s_itc.o [1]
+  .near_func.text    ro code  0x009cac     0x3  interrupt.o [4]
+  .near_func.text    ro code  0x009caf     0x3  low_level_init.o [4]
+  .near_func.text    ro code  0x009cb2     0x3  exit.o [4]
+  .near_func.text    ro code  0x009cb5     0x3  unhandled_exception.o [4]
+  .near_func.text    ro code  0x009cb8     0x2  main.o [1]
+  .near_func.text    ro code  0x009cba     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cbb     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cbc     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cbd     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cbe     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cbf     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc0     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc1     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc2     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc3     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc4     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc5     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc6     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc7     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc8     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc9     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cca     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009ccb     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009ccc     0x1  __dbg_break.o [3]
+  Initializer bytes  ro data  0x009ccd    0x17  <for P2 s0>
+                            - 0x009ce4  0x1c64
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address   Size
+          -------   ----
+Zero (__iar_zero_init2)
+    1 destination range, total size 0x2c:
+          0x000027  0x2c
+
+Copy (__iar_copy_init2)
+    1 source range, total size 0x17:
+          0x009ccd  0x17
+    1 destination range, total size 0x17:
+          0x000010  0x17
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+D:\LINK Item\oil pump\HardWare TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj: [1]
+    bemf.o                     256       14       14
+    capture.o                  258        1        4
+    clock.o                     55
+    control.o                  460        8       18
+    main.o                       8
+    motor.o                    642                16
+    pid.o                      253                12
+    power.o                    193                 3
+    stm8s_adc1.o             1 035       93
+    stm8s_exti.o               209       93
+    stm8s_gpio.o               286       93
+    stm8s_it.o                  84
+    stm8s_itc.o                362       92
+    stm8s_tim5.o               186       93
+    stm8s_tim6.o                45       93
+    stm8s_uart1.o              371       94
+    timer.o                     77
+    usart.o                     33
+    ------------------------------------------------
+    Total:                   4 813      674       67
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dbgstm8smd.a: [3]
+    __dbg_break.o                1
+    __dbg_xxexit.o              20
+    ------------------------------------------------
+    Total:                      21
+
+dlstm8smn.a: [4]
+    cexit.o                      5
+    char.o                       6
+    cstartup.o                  19
+    dc_util.o                   38
+    exit.o                       3
+    float.o                    914
+    init.o                      23
+    init_small.o                70
+    interrupt.o                  3      128
+    long.o                     320
+    long_util.o                 26
+    low_level_init.o             3
+    move.o                      18
+    short.o                     81
+    unhandled_exception.o        3
+    vreg_util.o                210
+    vregs.o                                       16
+    ------------------------------------------------
+    Total:                   1 742      128       16
+
+    Linker created                       18      256
+----------------------------------------------------
+    Grand Total:             6 576      820      339
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+?and16_x_x_dw           0x009795         Code  Gb  short.o [4]
+?and16_x_x_w0           0x009798         Code  Gb  short.o [4]
+?b0                     0x000000         Data  Gb  vregs.o [4]
+?b1                     0x000001         Data  Gb  vregs.o [4]
+?b10                    0x00000a         Data  Gb  vregs.o [4]
+?b11                    0x00000b         Data  Gb  vregs.o [4]
+?b12                    0x00000c         Data  Gb  vregs.o [4]
+?b13                    0x00000d         Data  Gb  vregs.o [4]
+?b14                    0x00000e         Data  Gb  vregs.o [4]
+?b15                    0x00000f         Data  Gb  vregs.o [4]
+?b2                     0x000002         Data  Gb  vregs.o [4]
+?b3                     0x000003         Data  Gb  vregs.o [4]
+?b4                     0x000004         Data  Gb  vregs.o [4]
+?b5                     0x000005         Data  Gb  vregs.o [4]
+?b6                     0x000006         Data  Gb  vregs.o [4]
+?b7                     0x000007         Data  Gb  vregs.o [4]
+?b8                     0x000008         Data  Gb  vregs.o [4]
+?b9                     0x000009         Data  Gb  vregs.o [4]
+?dc16_w0                0x0099d9         Code  Gb  dc_util.o [4]
+?dc32_l1                0x0099e7         Code  Gb  dc_util.o [4]
+?dc32_px                0x0099f4         Code  Gb  dc_util.o [4]
+?e0                     0x000001         Data  Gb  vregs.o [4]
+?e1                     0x000005         Data  Gb  vregs.o [4]
+?e2                     0x000009         Data  Gb  vregs.o [4]
+?e3                     0x00000d         Data  Gb  vregs.o [4]
+?epilogue_l2            0x008b2e         Code  Gb  vreg_util.o [4]
+?epilogue_l2_w6         0x008b32         Code  Gb  vreg_util.o [4]
+?epilogue_w4            0x008b39         Code  Gb  vreg_util.o [4]
+?fadd32_l0_l0_0x        0x00809d         Code  Gb  float.o [4]
+?fadd32_l0_l0_l1        0x0080a0         Code  Gb  float.o [4]
+?fcastf32s16_l0_x       0x0082bf         Code  Gb  float.o [4]
+?fcastf32u16_l0_x       0x0082c6         Code  Gb  float.o [4]
+?fcasts16f32_x_l0       0x0082e4         Code  Gb  float.o [4]
+?fdiv32_l0_l0_dc32      0x00820c         Code  Gb  float.o [4]
+?fdiv32_l0_l0_l1        0x008211         Code  Gb  float.o [4]
+?fmul32_l0_l0_0x        0x00816e         Code  Gb  float.o [4]
+?fmul32_l0_l0_l1        0x008171         Code  Gb  float.o [4]
+?l0                     0x000000         Data  Gb  vregs.o [4]
+?l1                     0x000004         Data  Gb  vregs.o [4]
+?l2                     0x000008         Data  Gb  vregs.o [4]
+?l3                     0x00000c         Data  Gb  vregs.o [4]
+?load32_0x_l0           0x009b78         Code  Gb  long_util.o [4]
+?load32_l1_0x           0x009b6c         Code  Gb  long_util.o [4]
+?longfarg16_v_w0_a      0x009c43         Code  Gb  move.o [4]
+?longfarg16_v_w0_x      0x009c45         Code  Gb  move.o [4]
+?mov_e0_e1              0x008b47         Code  Gb  vreg_util.o [4]
+?mov_e0_e2              0x008b54         Code  Gb  vreg_util.o [4]
+?mov_e1_e2              0x008b61         Code  Gb  vreg_util.o [4]
+?mov_e2_e0              0x008b6e         Code  Gb  vreg_util.o [4]
+?mov_l0_l1              0x008b44         Code  Gb  vreg_util.o [4]
+?mov_l0_l2              0x008b51         Code  Gb  vreg_util.o [4]
+?mov_l1_l2              0x008b5e         Code  Gb  vreg_util.o [4]
+?mov_l2_l0              0x008b6b         Code  Gb  vreg_util.o [4]
+?mov_w1_w3              0x008b4a         Code  Gb  vreg_util.o [4]
+?mov_w1_w5              0x008b57         Code  Gb  vreg_util.o [4]
+?mov_w3_w5              0x008b64         Code  Gb  vreg_util.o [4]
+?mov_w5_w1              0x008b71         Code  Gb  vreg_util.o [4]
+?mov_w6_w0              0x008b3d         Code  Gb  vreg_util.o [4]
+?mul16_x_x_w0           0x00975e         Code  Gb  short.o [4]
+?mul32_l0_l0_0x         0x008576         Code  Gb  long.o [4]
+?mul32_l0_l0_dl         0x008573         Code  Gb  long.o [4]
+?mul32_l0_l0_l1         0x00857f         Code  Gb  long.o [4]
+?pop_l0                 0x008b05         Code  Gb  vreg_util.o [4]
+?pop_l1                 0x008b10         Code  Gb  vreg_util.o [4]
+?pop_l2                 0x008b1b         Code  Gb  vreg_util.o [4]
+?pop_w4                 0x008ac3         Code  Gb  vreg_util.o [4]
+?pop_w6                 0x008aca         Code  Gb  vreg_util.o [4]
+?push_l0                0x008ad9         Code  Gb  vreg_util.o [4]
+?push_l1                0x008ade         Code  Gb  vreg_util.o [4]
+?push_l2                0x008ae3         Code  Gb  vreg_util.o [4]
+?push_w4                0x008aa6         Code  Gb  vreg_util.o [4]
+?push_w6                0x008aab         Code  Gb  vreg_util.o [4]
+?sdiv16_x_x_y           0x00977c         Code  Gb  short.o [4]
+?sdiv32_l0_l0_dl        0x00866a         Code  Gb  long.o [4]
+?sdiv32_l0_l0_l1        0x00866d         Code  Gb  long.o [4]
+?sll16_x_x_4            0x0097aa         Code  Gb  short.o [4]
+?sll16_x_x_5            0x0097a9         Code  Gb  short.o [4]
+?sll16_x_x_6            0x0097a8         Code  Gb  short.o [4]
+?sll16_x_x_a            0x0097a0         Code  Gb  short.o [4]
+?sll8_a_a_5             0x009c8b         Code  Gb  char.o [4]
+?sll8_a_a_6             0x009c8a         Code  Gb  char.o [4]
+?smod32_l1_l0_l1        0x00866d         Code  Gb  long.o [4]
+?udiv32_l0_l0_l1        0x0085fd         Code  Gb  long.o [4]
+?umod32_l1_l0_l1        0x0085fd         Code  Gb  long.o [4]
+?w0                     0x000000         Data  Gb  vregs.o [4]
+?w1                     0x000002         Data  Gb  vregs.o [4]
+?w2                     0x000004         Data  Gb  vregs.o [4]
+?w3                     0x000006         Data  Gb  vregs.o [4]
+?w4                     0x000008         Data  Gb  vregs.o [4]
+?w5                     0x00000a         Data  Gb  vregs.o [4]
+?w6                     0x00000c         Data  Gb  vregs.o [4]
+?w7                     0x00000e         Data  Gb  vregs.o [4]
+ADC1_ClearFlag          0x008f45   0xb7  Code  Gb  stm8s_adc1.o [1]
+ADC1_Cmd                0x0098af   0x2f  Code  Gb  stm8s_adc1.o [1]
+ADC1_ConversionConfig   0x008dd0   0xbe  Code  Gb  stm8s_adc1.o [1]
+ADC1_GetConversionValue
+                        0x00970a   0x54  Code  Gb  stm8s_adc1.o [1]
+ADC1_GetFlagStatus      0x008e8e   0xb7  Code  Gb  stm8s_adc1.o [1]
+ADC1_IRQHandler         0x009cca    0x1  Code  Gb  stm8s_it.o [1]
+ADC1_ITConfig           0x009654   0x5b  Code  Gb  stm8s_adc1.o [1]
+ADC1_SchmittTriggerConfig
+                        0x0088d5   0xfc  Code  Gb  stm8s_adc1.o [1]
+ADC1_StartConversion    0x009c95    0x5  Code  Gb  stm8s_adc1.o [1]
+AWU_IRQHandler          0x009cbc    0x1  Code  Gb  stm8s_it.o [1]
+BSP_Init                0x009abb   0x20  Code  Gb  control.o [1]
+Bemf_Configuration      0x0099ff   0x24  Code  Gb  bemf.o [1]
+Bemf_Init               0x009bf4   0x14  Code  Gb  bemf.o [1]
+CLK_IRQHandler          0x009cbd    0x1  Code  Gb  stm8s_it.o [1]
+CSTACK$$Base            0x000300          --   Gb  - Linker created -
+CSTACK$$Limit           0x000400          --   Gb  - Linker created -
+CapCount                0x00004d    0x1  Data  Gb  capture.o [1]
+Capture_Init            0x00983d   0x3b  Code  Gb  capture.o [1]
+CheckBEMF               0x000018    0x6  Data  Gb  bemf.o [1]
+Clock_Init              0x009af9   0x1d  Code  Gb  clock.o [1]
+Commutation             0x0087c7  0x10e  Code  Gb  motor.o [1]
+Count100ms              0x000049    0x2  Data  Gb  control.o [1]
+Count50ms               0x000051    0x1  Data  Gb  control.o [1]
+Count6ms                0x000050    0x1  Data  Gb  control.o [1]
+CurValue                0x00004b    0x2  Data  Gb  power.o [1]
+CurrentInit             0x000045    0x2  Data  Gb  control.o [1]
+Current_Init            0x009960   0x29  Code  Gb  power.o [1]
+Current_Offset          0x009a45   0x22  Code  Gb  power.o [1]
+Det_Step                0x009c66    0xf  Code  Gb  motor.o [1]
+Detect_Current          0x009292   0x76  Code  Gb  power.o [1]
+EEPROM_EEC_IRQHandler   0x009ccb    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTA_IRQHandler   0x009cbe    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTB_IRQHandler   0x009b9d   0x16  Code  Gb  stm8s_it.o [1]
+EXTI_PORTC_IRQHandler   0x009cbf    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTD_IRQHandler   0x009cc0    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTE_IRQHandler   0x009cc1    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTF_IRQHandler   0x009cc2    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_SetExtIntSensitivity
+                        0x008b78   0xd1  Code  Gb  stm8s_exti.o [1]
+Feed_Dog                0x009c90    0x5  Code  Gb  clock.o [1]
+GPIO_Init               0x0086b3  0x114  Code  Gb  stm8s_gpio.o [1]
+GPIO_WriteHigh          0x009ca3    0x3  Code  Gb  stm8s_gpio.o [1]
+GPIO_WriteLow           0x009c9f    0x4  Code  Gb  stm8s_gpio.o [1]
+GPIO_WriteReverse       0x009ca6    0x3  Code  Gb  stm8s_gpio.o [1]
+HallSteps               0x000010    0x8  Data  Gb  bemf.o [1]
+HighPeriod              0x000025    0x1  Data  Gb  capture.o [1]
+I2C_IRQHandler          0x009cc9    0x1  Code  Gb  stm8s_it.o [1]
+INTVEC$$Base            0x008000          --   Gb  - Linker created -
+INTVEC$$Limit           0x008080          --   Gb  - Linker created -
+ITC_GetCPUCC            0x009ca9    0x3  Code  Gb  stm8s_itc.o [1]
+ITC_GetSoftIntStatus    0x009c84    0x6  Code  Gb  stm8s_itc.o [1]
+ITC_SetSoftwarePriority
+                        0x008412  0x161  Code  Gb  stm8s_itc.o [1]
+Motor                   0x000027   0x10  Data  Gb  motor.o [1]
+Motor_Configuration     0x009937   0x29  Code  Lc  motor.o [1]
+Motor_IO_Configuration  0x0097af   0x48  Code  Lc  motor.o [1]
+Motor_Init              0x0095f8   0x3c  Code  Gb  motor.o [1]
+Motor_Stop              0x009634   0x20  Code  Gb  motor.o [1]
+Nwp_Signal              0x009c55   0x11  Code  Gb  capture.o [1]
+Nwp_Signal_H            0x009c75    0x9  Code  Gb  capture.o [1]
+PID                     0x000037    0xc  Data  Gb  pid.o [1]
+PID_Compute             0x008d11   0xbf  Code  Gb  pid.o [1]
+PID_DeInit              0x009b16   0x1d  Code  Gb  pid.o [1]
+PID_Init                0x009a67   0x21  Code  Gb  pid.o [1]
+Real                    0x000043    0x2  Data  Gb  control.o [1]
+RealCurrent             0x000047    0x2  Data  Gb  control.o [1]
+Region$$Table$$Base     0x009aa9          --   Gb  - Linker created -
+Region$$Table$$Limit    0x009abb          --   Gb  - Linker created -
+Run                     0x008ffc   0xb3  Code  Gb  control.o [1]
+SPI_IRQHandler          0x009cc3    0x1  Code  Gb  stm8s_it.o [1]
+Sensorless_START        0x0091fa   0x98  Code  Gb  motor.o [1]
+TIM1_CAP_COM_IRQHandler
+                        0x009cc5    0x1  Code  Gb  stm8s_it.o [1]
+TIM1_UPD_OVF_TRG_BRK_IRQHandler
+                        0x009cc4    0x1  Code  Gb  stm8s_it.o [1]
+TIM5_CAP_COM_IRQHandler
+                        0x009bb3   0x16  Code  Gb  stm8s_it.o [1]
+TIM5_ClearFlag          0x009878   0x37  Code  Gb  stm8s_tim5.o [1]
+TIM5_ClearITPendingBit  0x009989   0x28  Code  Gb  stm8s_tim5.o [1]
+TIM5_GetITStatus        0x0096af   0x5b  Code  Gb  stm8s_tim5.o [1]
+TIM5_UPD_OVF_BRK_TRG_IRQHandler
+                        0x009cc6    0x1  Code  Gb  stm8s_it.o [1]
+TIM6_ClearITPendingBit  0x0098de   0x2d  Code  Gb  stm8s_tim6.o [1]
+TIM6_UPD_OVF_TRG_IRQHandler
+                        0x009bc9   0x16  Code  Gb  stm8s_it.o [1]
+TLI_IRQHandler          0x009cbb    0x1  Code  Gb  stm8s_it.o [1]
+TRAP_IRQHandler         0x009cba    0x1  Code  Gb  stm8s_it.o [1]
+Target                  0x000023    0x2  Data  Gb  control.o [1]
+Task                    0x009308   0x65  Code  Gb  control.o [1]
+Task_50ms               0x0097f7   0x46  Code  Gb  control.o [1]
+Task_Bemf               0x008c49   0xc8  Code  Gb  bemf.o [1]
+Task_Capture1           0x0090af   0xad  Code  Gb  capture.o [1]
+Tim6_Init               0x009b33   0x1d  Code  Gb  timer.o [1]
+Time_1ms                0x009a23   0x22  Code  Gb  control.o [1]
+Tx_Data                 0x00001e    0x5  Data  Gb  control.o [1]
+UART1_GetFlagStatus     0x00915c   0x9e  Code  Gb  stm8s_uart1.o [1]
+UART1_ITConfig          0x0089d1   0xd5  Code  Gb  stm8s_uart1.o [1]
+UART1_RX_IRQHandler     0x009cc8    0x1  Code  Gb  stm8s_it.o [1]
+UART1_TX_IRQHandler     0x009cc7    0x1  Code  Gb  stm8s_it.o [1]
+UART_Init               0x009a88   0x21  Code  Gb  usart.o [1]
+Uart_Send               0x00990b   0x2c  Code  Gb  control.o [1]
+Watch_Dog_Init          0x009bdf   0x15  Code  Gb  clock.o [1]
+Work_State              0x000026    0x1  Data  Gb  control.o [1]
+__DebugBreak            0x009ccc    0x1  Code  Gb  __dbg_break.o [3]
+__exit                  0x009c1c   0x14  Code  Gb  __dbg_xxexit.o [3]
+__iar_copy_init2        0x0099b1         Code  Gb  init_small.o [4]
+__iar_data_init2        0x009b86   0x17  Code  Gb  init.o [4]
+__iar_program_start     0x009c30         Code  Gb  cstartup.o [4]
+__iar_unhandled_exception
+                        0x009cb5         Code  Gb  unhandled_exception.o [4]
+__iar_zero_init2        0x009adb         Code  Gb  init_small.o [4]
+__intvec                0x008000         Data  Gb  interrupt.o [4]
+__low_level_init        0x009caf    0x3  Code  Gb  low_level_init.o [4]
+_exit                   0x009c9a         Code  Gb  cexit.o [4]
+_interrupt_1            0x009cba         Code  Gb  stm8s_it.o [1]
+_interrupt_10           0x009cc2         Code  Gb  stm8s_it.o [1]
+_interrupt_12           0x009cc3         Code  Gb  stm8s_it.o [1]
+_interrupt_13           0x009cc4         Code  Gb  stm8s_it.o [1]
+_interrupt_14           0x009cc5         Code  Gb  stm8s_it.o [1]
+_interrupt_15           0x009cc6         Code  Gb  stm8s_it.o [1]
+_interrupt_16           0x009bb3         Code  Gb  stm8s_it.o [1]
+_interrupt_19           0x009cc7         Code  Gb  stm8s_it.o [1]
+_interrupt_2            0x009cbb         Code  Gb  stm8s_it.o [1]
+_interrupt_20           0x009cc8         Code  Gb  stm8s_it.o [1]
+_interrupt_21           0x009cc9         Code  Gb  stm8s_it.o [1]
+_interrupt_24           0x009cca         Code  Gb  stm8s_it.o [1]
+_interrupt_25           0x009bc9         Code  Gb  stm8s_it.o [1]
+_interrupt_26           0x009ccb         Code  Gb  stm8s_it.o [1]
+_interrupt_3            0x009cbc         Code  Gb  stm8s_it.o [1]
+_interrupt_4            0x009cbd         Code  Gb  stm8s_it.o [1]
+_interrupt_5            0x009cbe         Code  Gb  stm8s_it.o [1]
+_interrupt_6            0x009b9d         Code  Gb  stm8s_it.o [1]
+_interrupt_7            0x009cbf         Code  Gb  stm8s_it.o [1]
+_interrupt_8            0x009cc0         Code  Gb  stm8s_it.o [1]
+_interrupt_9            0x009cc1         Code  Gb  stm8s_it.o [1]
+assert_failed           0x009cb8    0x2  Code  Gb  main.o [1]
+delay_ms                0x009b50   0x1c  Code  Gb  timer.o [1]
+delay_us                0x009c08   0x14  Code  Gb  timer.o [1]
+exit                    0x009cb2    0x3  Code  Gb  exit.o [4]
+main                    0x009c7e    0x6  Code  Gb  main.o [1]
+
+
+[1] = D:\LINK Item\oil pump\HardWare TestSoftWare\WaterPump-无信号正常转\Pump\DEBUG\Debug\Obj
+[2] = command line
+[3] = dbgstm8smd.a
+[4] = dlstm8smn.a
+
+  6 576 bytes of readonly  code memory
+    820 bytes of readonly  data memory
+    339 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

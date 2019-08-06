@@ -1,0 +1,99 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=193564196
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Breakpoints2]
+Count=0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[BreakpointUsageDialog]
+Placement=_ 791 372 1236 654
+[struct_types]
+Fmt0=MotorParam_TypeDef-BemfCount	3	0
+Fmt1=MotorParam_TypeDef-BemfSwitchStepCount	3	0
+Fmt2=MotorParam_TypeDef-ErrorFlag	3	0
+Fmt3=MotorParam_TypeDef-NumPair	3	0
+Fmt4=MotorParam_TypeDef-PreDuty	3	0
+Fmt5=MotorParam_TypeDef-StOK	3	0
+Fmt6=MotorParam_TypeDef-StartFlag	3	0
+Fmt7=MotorParam_TypeDef-StartSwitchStepCount	3	0
+Fmt8=MotorParam_TypeDef-Step	3	0
+Fmt9=PID_TypeDef-Err	2	0
+Fmt10=PID_TypeDef-I	4	0
+[array_types]
+Fmt0=u8[2]	3	0
+[watch_formats]
+Fmt0={W}0:A_CurState	3	0
+Fmt1={W}0:A_LastState	3	0
+Fmt2={W}0:B_CurState	3	0
+Fmt3={W}0:B_LastState	3	0
+Fmt4={W}0:C_CurState	3	0
+Fmt5={W}0:C_LastState	3	0
+Fmt6={W}0:CapCount	3	0
+Fmt7={W}0:CurCount	3	0
+Fmt8={W}0:HighPeriod	3	0
+Fmt9={W}0:LastCapCount	3	0
+Fmt10={W}0:SigPeriod	3	0
+Fmt11={W}0:State	3	0
+Fmt12={W}0:i	3	0
+[DataSample]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\BSP\USART}.477.3" 0 0 0 0 "" 0 ""
+Count=1
+[Aliases]
+Count=0
+SuppressDialog=0

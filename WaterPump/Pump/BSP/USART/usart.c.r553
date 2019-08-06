@@ -1,0 +1,41 @@
+#include "usart.h"   
+#include "confer.h"
+#include "stdarg.h"
+
+
+
+//PD5 TX   PD6 RX
+void UART_Init(void)//串口通讯配置
+{
+
+//  UART1_Init(9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO,UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
+//  UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
+  
+//  UART1_Cmd(ENABLE);	
+  UART1->BRR1 = 0x68;
+  UART1->BRR2 = 0x02;
+  UART1->CR1 = 0;
+  UART1->CR2 =0x0C;
+  
+  UART1->CR1 &= 1; 
+
+}
+
+u8 Tx[3]={0,0,0xff};   
+
+/*发送串口数据*/
+void Uart_Send(u16 Data)
+{
+  u8 i;
+
+  Tx[0]=Data>>8;
+  Tx[1]=Data;
+  for(i=0;i<3;i++)
+  {
+    while(UART1_GetFlagStatus(UART1_FLAG_TC)==RESET);
+    UART1->DR = Tx[i];
+  }
+
+}
+
+
